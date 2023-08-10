@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+void cambios (int *a, int *b){
+	int tempo = *a;
+	*a = *b;
+	*b = tempo;
+	
+}
+void ordenar_lista (int numeros[], int n){
+	for (int i=0; i<n-1; i++){
+		int Indice = i;
+		for (int j=i+1; j<n; j++){
+			if (numeros[j] > numeros[Indice]){
+				Indice = j;
+			}
+			
+		}
+		if (Indice != i){
+			cambios(&numeros[i], &numeros[Indice]);
+			
+			
+		}
+	}
+}
+int main(){
+	int lista[10];
+	int e;
+	
+	for (e=0; e<10; e++){
+		printf ("Ingrese una lista de Numeros, %d:", e+1);
+		scanf ("%d", &lista[e]);
+	}
+	
+	ordenar_lista (lista, 10);
+	
+	printf ("Los numeros Ordenados de Manera Descendente son: \n");
+	for (e=0; e<10; e++){
+		
+		printf ("%d\n ", lista[e]);
+	}
+	return 0;
+}
+
