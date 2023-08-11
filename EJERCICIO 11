@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+	char cadena[50];
+	int i;
+	int ContadorV=0;
+	
+	printf ("Ingrese una Palabra:");
+	scanf ("%s", cadena);
+	
+	
+	printf ("Las vocales dentro de la palabra son:");
+	for (i=0; i<strlen(cadena); i++){
+		char c = cadena[i];
+		if(c == 'a'|| c == 'e'|| c == 'i'|| c == 'o'|| c == 'u'|| c == 'A'|| c == 'E'|| c == 'I'|| c == 'O'|| c == 'U'){
+			printf("%c", c);
+			ContadorV++;
+		}
+	}
+	printf ("\nEl numero de Vocales en la palabra es:%d", ContadorV);
+	return 0;
+}
+

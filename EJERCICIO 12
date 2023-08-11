@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+	char cadena[100];
+	int i;
+	int Cripto = 3;
+	
+	printf ("Ingrese una Palabra:");
+	scanf ("%s", cadena);
+	
+	
+	
+	for (i=0; i<strlen(cadena); i++){
+		if (cadena[i]>= 'a' && cadena[i]<= 'z'){
+			cadena[i] = (cadena[i] - 'a' + Cripto)%26 + 'a';
+		}
+		else if(cadena[i]>= 'A' && cadena[i]<= 'Z'){
+			cadena[i] = (cadena[i] - 'A' + Cripto)%26 + 'A';
+		}
+	}
+	printf ("La palabra Encriptada es:%s", cadena);
+}
+	
